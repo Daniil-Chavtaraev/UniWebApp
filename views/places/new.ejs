@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Добавить Место</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/places" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Название</label>
+                <input class="form-control" type="text" id="title" name="place[title]" required>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Местоположение</label>
+                <input class="form-control" type="text" id="location" name="place[location]" required>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Описание</label>
+                <textarea class="form-control" type="text" id="description" name="place[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Добавьте изображение(ия)...</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Добавть Место</button>
+            </div>
+        </form>
+        <a href="/places">All Places</a>
+    </div>
+</div>

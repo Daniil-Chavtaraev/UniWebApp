@@ -1,0 +1,60 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">IN THE CITY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Главная</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="placesDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Места
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="placesDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/places">Все Места</a></li>
+                      <li><a class="dropdown-item" href="/places/new">Добавить Место</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="newsDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Статьи
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="newsDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/news">Все Статьи</a></li>
+                      <li><a class="dropdown-item" href="/news/new">Добавить Статью</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Галерея
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="galleryDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/galleryimages">Галерея</a></li>
+                      <li><a class="dropdown-item" href="/galleryimages/new">Добавить Изображение</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="mapsDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Карты
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="mapsDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/maps/cluster">Кластерная Карта</a></li>
+                      <li><a class="dropdown-item" href="/maps/radius">Места В Радиусе</a></li>
+                      <li><a class="dropdown-item" href="/maps/routes">Маршруты</a></li>
+                    </ul>
+                </li>
+                <a class="nav-link" href="/about">О нас</a>
+                
+            </div>
+            <div class="navbar-nav ms-auto">
+                <% if(!currentUser) {%>
+                <a class="nav-link" href="/login">Вход</a>
+                <a class="nav-link" href="/register">Регистрация</a>
+                <% } else {%>
+                <a class="nav-link" href="/logout">Выход</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

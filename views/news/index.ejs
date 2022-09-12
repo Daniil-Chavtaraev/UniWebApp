@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate')%>
+<div class="container">
+
+    <h1>Статьи</h1>
+
+    <%  let counter = 0;
+        for (let n of news.reverse()){%>
+            <% if (counter === 0 || counter % 3 === 0) { %>
+                <div class="row">
+            <%
+            counter += 1;
+            } %>
+            <div class="col-lg-4">
+            <div class="card" style="margin-bottom: 10px;">
+                <%if(n.images.length) {%>
+                <img class="card-img-top" alt="" src="<%=n.images[0].url%>">
+                <% }else {%>
+                <img class="card-img-top" alt=""
+                src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                <% } %>
+                <div class="card-body">
+                <h5 class="card-title"><%= n.headline %></h5>
+                <p class="card-text" style="text-align: justify;">
+                    <%= n.body.substring(0, 90); %>...
+                </p>
+                <a href="/news/<%=n._id%>" class="btn btn-primary">Читать</a>
+                </div>
+            </div>
+            </div>
+            <% if (counter === 0 || counter % 3 === 0) { %>
+                </div>
+            <% } %>
+    <%
+    }
+    %> 
+</div>

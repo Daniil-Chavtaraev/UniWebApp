@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center" style="margin-bottom: 75px;">Дабавьте изображение в нашу галерею!</h1>
+    <div class="col-8 offset-2">
+        <form action="/galleryimages" method="POST">
+            <div class="mb-3">
+                <input class="form-control" type="text" id="image" name="galleryimage[image]" placeholder="Введите URL изображения">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                <button class="btn btn-success">Добавить изображение</button>
+              </div>
+        </form>
+    </div>
+</div>

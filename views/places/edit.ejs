@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Изменение Места</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/places/<%=place._id%>?_method=PUT" method="POST" novalidate class="validated-form"
+            enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Название</label>
+                <input class="form-control" type="text" id="title" name="place[title]"
+                    value="<%=place.title %>" required>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Местоположение</label>
+                <input class="form-control" type="text" id="location" name="place[location]"
+                    value="<%=place.location %>" required>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Описание</label>
+                <textarea class="form-control" type="text" id="description" name="place[description]"
+                    required><%= place.description%></textarea>
+                <div class="valid-feedback">
+                    Отлично!
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Добавить больше изображений...</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <% place.images.forEach(function(img, i) {  %>
+
+                <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                </div>
+                <label for="image-<%=i%>">Удалить?</label>
+                <% })%>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Обновить Место</button>
+            </div>
+        </form>
+        <a href="/places/<%= place._id%>">Назад К Списку Мест</a>
+
+    </div>
+</div>
